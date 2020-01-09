@@ -122,4 +122,50 @@ body {
 
 .container-list {
   height: 700px;
+  padding: 20px;
 }
+.container-list-name {
+  font-size: 30px;
+  line-height: 75px;
+}
+
+table {
+  border-bottom: 1px solid #DCDEE3;
+
+  padding-top: 20px;
+  font-size: 24px;
+  border-collapse: collapse;
+  
+  width: 100%;
+}
+.container-list-title {
+  height: 50px;
+  color: #333;
+  background: #ECEBF0;
+  border-bottom: 1px solid #DCDEE3;
+
+}
+
+.project-name {
+  height: 65px;
+  width: 20%;
+  padding-left: 20px;
+}
+.project-describe {
+  height: 65px;
+  width: 50%;
+}
+.project-deadline {
+  height: 65px;
+  width: 10%;
+}
+.project-status {
+  height: 65px;
+  width: 10%;
+  padding-left: 25px;
+}
+.project-operation {
+  height: 65px;
+  width: 10%;
+}
+
