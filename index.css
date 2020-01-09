@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  margin: 20px;
+}
+
+.head-list {
+  height: 100px;
+  /* width: 100%; */
+  display: flex;
+}
+
+.head-item-all-missions {
+  height: 100px;
+  width: 320px;
+
+  margin: 0 20px;
+  background-color: #31b48d;
+
+  border-radius: 5px;
+}
+.head-item-unsolve {
+  height: 100px;
+  width: 320px;
+
+  margin: 0 20px;
+  background-color: #38a1f2;
+
+  border-radius: 5px;
+}
+.head-item-handling {
+  height: 100px;
+  width: 320px;
+
+  margin: 0 20px;
+  background-color: #7538c7;
+
+  border-radius: 5px;
+}
+.head-item-done {
+  height: 100px;
+  width: 320px;
+
+  margin: 0 20px;
+  background-color: #3b67a4;
+
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+.container-list {
+  height: 700px;
+}
