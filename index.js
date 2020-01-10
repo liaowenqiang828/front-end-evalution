@@ -13,13 +13,12 @@ function main() {
             console.log(`Error ${ajax.status}: ${ajax.statusText}`); 
         } else {
             // 这里已经获得数据，responseText, 数组类型
-            console.log(JSON.parse(ajax.responseText)); 
+            // console.log(JSON.parse(ajax.responseText)); 
             // projects items insert
             let data = JSON.parse(ajax.responseText);
-            data.forEach(
-                insertProjectItem
-            );
+            data.forEach(insertProjectItem);
             // calculate  the number
+            console.log(calculate(data));
             // change the head list
         }
     };
@@ -53,16 +52,23 @@ function insertProjectItem(item) {
     projectTable.appendChild(aNewItem);
 }
 
-// projectData.forEach(
-//     insertProjectItem
-// );
 
 function calculate(data) {
-    let [sum, number, percent] = [0, 0, 0];
+    let [sum, numberArray, activePercent, pendingPercent, closedPercent] = [0];
     sum = data.length;
-    number = calculateNumber(data);
-    floatPercent = number / sum;
-    percent = toPercent(floatPercent);
+    // console.log("sum:" + sum);
+    numberArray = calculateNumber(data);
+    // console.log("numberArray:" + numberArray);
+
+    activePercent = toPercent(numberArray[0] / sum);
+    // console.log("numberArray[0]:" + numberArray[0]);
+    // console.log("floatnum:" + numberArray[0] / sum);
+    // console.log("toPercent:" + toPercent(numberArray[0] / sum));
+    // console.log("activePercent:" + activePercent);
+    pendingPercent = toPercent(numberArray[1] / sum);
+    closedPercent = toPercent(numberArray[2] / sum);
+
+    return [activePercent, pendingPercent, closedPercent];
 }
 
 function toPercent(number) {
@@ -73,5 +79,17 @@ function toPercent(number) {
 
 function calculateNumber(data) {
     let [active, pending, closed] = [0, 0, 0];
+    data.forEach(statusJudgment);
 
+    function statusJudgment(element) {
+        if (element.status === "ACTIVE") {
+            active = active + 1;
+        } else if (element.status === "PENDING") {
+            pending = pending + 1;
+        } else {
+            closed = closed + 1;
+        }
+    }
+
+    return [active, pending, closed];
 }
