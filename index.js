@@ -36,7 +36,7 @@ function insertProjectItem(item) {
         <td class="project-endtime">${item.endTime}</td>
         <td class="project-status-${item.status}">${item.status}</td>
         <td class="project-operation">
-        <input type="button" value="删除" class="delete-button" />
+        <input type="button" onclick="deleteItem()" value="删除" class="delete-button" />
         </td>
     `.trim();
 
@@ -92,4 +92,11 @@ function updateHeadList(headListArray) {
     document.getElementById("pending-percent").innerText = `${headListArray[4]}`;
     document.getElementById("closed-number").innerText = `${headListArray[5]}`;
     document.getElementById("closed-percent").innerText = `${headListArray[6]}`;
+}
+
+function deleteItem() {
+    let body = document.getElementsByTagName("body")[0];
+    body.setAttribute("class", "masklayer");
+    
+    confirm("确认删除该项目吗？")
 }

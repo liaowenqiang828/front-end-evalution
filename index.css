@@ -17,7 +17,7 @@ body {
 
 .head-item-all-missions {
   height: 80px;
-  width: 290px;
+  width: 25%;
 
   margin: 0 20px;
   padding: 20px;
@@ -163,6 +163,13 @@ table {
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
+.describe :hover {
+  /* text-overflow: ellipsis; */
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
 .project-endtime {
   width: 12%;
 
@@ -204,4 +211,20 @@ table {
   font-size: 24px;
   border: none;
 }
+
+.masklayer {
+  height: 100%;
+  /* width: 100px; */
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+.no-masklayer {
+  z-index: 1;
+}
+
 
