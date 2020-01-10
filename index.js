@@ -97,6 +97,7 @@ function updateHeadList(headListArray) {
 function deleteItem() {
     let body = document.getElementsByTagName("body")[0];
     body.setAttribute("class", "masklayer");
-    
+
     confirm("确认删除该项目吗？")
+    // let openWindow = window.open("", "newwindow", "height=170px, width=340px, top=calc(50% - 85px), left= calc(50% - 170px), toolbar =no, menubar=no, scrollbars=no, resizable=no, location=no, status=no")  
 }
