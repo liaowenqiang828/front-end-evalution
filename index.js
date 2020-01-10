@@ -1,26 +1,18 @@
-// 入口函数
 function main() {
-    // 获取数据
     // let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest; 
-    //为什么在node环境里面需要require这一步操作
-    let ajax = new XMLHttpRequest(); // 在浏览器环境下，即chrome console环境中请求服务器数据
 
+    let ajax = new XMLHttpRequest(); 
     ajax.open('GET', "http://localhost:3000/projects");
     ajax.send();
     ajax.onload = function () {
-
         if (ajax.status != 200) {
             console.log(`Error ${ajax.status}: ${ajax.statusText}`); 
         } else {
-            // 这里已经获得数据，responseText, 数组类型
-            // console.log(JSON.parse(ajax.responseText)); 
-            // projects items insert
             let data = JSON.parse(ajax.responseText);
             data.forEach(insertProjectItem);
-            // calculate  the number
-            console.log(calculate(data));
+
             let headListArray = calculate(data);
-            // change the head list
+
             updateHeadList(headListArray);
         }
     };
@@ -29,9 +21,6 @@ function main() {
     };
 }
 main();
-
-    // const projectData = data.projects;
-    // console.log(projectData);
 
 function insertProjectItem(item) {
     let projectTable = document.getElementsByTagName("tbody")[0];
@@ -53,7 +42,6 @@ function insertProjectItem(item) {
 
     projectTable.appendChild(aNewItem);
 }
-
 
 function calculate(data) {
     let [sum, numberArray, activePercent, pendingPercent, closedPercent] = [0];
