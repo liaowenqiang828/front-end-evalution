@@ -146,6 +146,7 @@ table {
 }
 .project-list-item {
   height: 100px;
+  border-bottom: 1px solid #DCDEE3;
 }
 
 .project-name {
@@ -176,5 +177,15 @@ table {
   width: 10%;
 
   padding-left: 15px;
+}
+.delete-button {
+  height: 40px;
+  width: 75px;
+
+  color: white;
+  background: #ee706d;
+  border-radius: 4px;
+  font-size: 24px;
+  border: none;
 }
 
