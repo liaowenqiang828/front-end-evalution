@@ -120,11 +120,11 @@ body {
 
 
 
-.container-list {
-  height: 700px;
+.project-list {
+  /* height: 700px; */
   padding: 20px;
 }
-.container-list-name {
+.project-list-name {
   font-size: 30px;
   line-height: 75px;
 }
@@ -138,34 +138,43 @@ table {
   
   width: 100%;
 }
-.container-list-title {
+.project-list-title {
   height: 50px;
   color: #333;
   background: #ECEBF0;
   border-bottom: 1px solid #DCDEE3;
-
+}
+.project-list-item {
+  height: 100px;
 }
 
 .project-name {
-  height: 65px;
   width: 20%;
   padding-left: 20px;
 }
 .project-describe {
-  height: 65px;
   width: 50%;
 }
-.project-deadline {
-  height: 65px;
+.describe {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.project-endtime {
   width: 10%;
+
+  padding-left: 15px;
 }
 .project-status {
-  height: 65px;
   width: 10%;
-  padding-left: 25px;
+
+  padding-left: 40px;
 }
 .project-operation {
-  height: 65px;
   width: 10%;
+
+  padding-left: 15px;
 }
 

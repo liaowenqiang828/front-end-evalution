@@ -1,14 +1,24 @@
 {
   "name": "front-end-evaluation",
   "version": "1.0.0",
-  "description": "",
+  "description": "> 此库为非计培训前端测评的 homework, 根据 db.json 中的数据，实现效果图中的效果",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "json-server": "json-server --watch db.json"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "json-server": "^0.15.1"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liaowenqiang828/front-end-evalution.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liaowenqiang828/front-end-evalution/issues"
+  },
+  "homepage": "https://github.com/liaowenqiang828/front-end-evalution#readme"
 }
