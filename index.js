@@ -19,7 +19,9 @@ function main() {
             data.forEach(insertProjectItem);
             // calculate  the number
             console.log(calculate(data));
+            let headListArray = calculate(data);
             // change the head list
+            updateHeadList(headListArray);
         }
     };
     ajax.onerror = function () {
@@ -68,7 +70,7 @@ function calculate(data) {
     pendingPercent = toPercent(numberArray[1] / sum);
     closedPercent = toPercent(numberArray[2] / sum);
 
-    return [activePercent, pendingPercent, closedPercent];
+    return [sum, numberArray[0], activePercent, numberArray[1], pendingPercent,numberArray[2], closedPercent];
 }
 
 function toPercent(number) {
@@ -92,4 +94,14 @@ function calculateNumber(data) {
     }
 
     return [active, pending, closed];
+}
+
+function updateHeadList(headListArray) {
+    document.getElementById("all-missions-number").innerText = `${headListArray[0]}`;
+    document.getElementById("active-number").innerText = `${headListArray[1]}`;
+    document.getElementById("active-percent").innerText = `${headListArray[2]}`;
+    document.getElementById("pending-number").innerText = `${headListArray[3]}`;
+    document.getElementById("pending-percent").innerText = `${headListArray[4]}`;
+    document.getElementById("closed-number").innerText = `${headListArray[5]}`;
+    document.getElementById("closed-percent").innerText = `${headListArray[6]}`;
 }
