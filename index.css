@@ -164,17 +164,33 @@ table {
   -webkit-box-orient: vertical;
 }
 .project-endtime {
-  width: 10%;
+  width: 12%;
 
   padding-left: 15px;
 }
+
 .project-status {
   width: 10%;
-
-  padding-left: 40px;
+  padding-left: 30px;
 }
-.project-operation {
+.project-status-ACTIVE {
   width: 10%;
+  padding-left: 30px;
+  color: #666666;
+}
+.project-status-PENDING {
+  width: 10%;
+  padding-left: 30px;
+  color: #ee706d;
+}
+.project-status-CLOSED {
+  width: 10%;
+  padding-left: 30px;
+  color: #f7da47;
+}
+
+.project-operation {
+  width: 8%;
 
   padding-left: 15px;
 }
