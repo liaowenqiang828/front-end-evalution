@@ -94,10 +94,41 @@ function updateHeadList(headListArray) {
     document.getElementById("closed-percent").innerText = `${headListArray[6]}`;
 }
 
-function deleteItem() {
-    let body = document.getElementsByTagName("body")[0];
-    body.setAttribute("class", "masklayer");
+window.confirm = confirm;
 
-    confirm("确认删除该项目吗？")
-    // let openWindow = window.open("", "newwindow", "height=170px, width=340px, top=calc(50% - 85px), left= calc(50% - 170px), toolbar =no, menubar=no, scrollbars=no, resizable=no, location=no, status=no")  
-}
+function confirm() {
+    let mask = document.createElement('div');
+    mask.setAttribute("class", "mask");
+
+    let aWindow = document.createElement('div');
+    aWindow.innerHTML = `
+        <svg class="the-x" aria-hidden="true">
+            <use xlink:href="#icon-guanbi"></use>
+        </svg>
+        <span class="question-icon icon-wenhao"></span>
+        <span class="reminder-title">提示</span>
+        <div class="reminder-message">确认删除该项目吗？</div>
+        <input class="button-sure" type="button", value="确认" />
+        <input class="button-cancle" type="button", value="取消" />
+    `.trim();
+    aWindow.setAttribute("class", "the-window");
+    let sure = true;
+    let cancel = false;
+
+    mask.appendChild(aWindow);
+    document.getElementsByTagName("body")[0].appendChild(mask);
+
+      //点击确认事件，用回调函数
+    document.getElementsByClassName("button-cancel")[0].onclick = function () {
+        mask.parentNode.removeChild(mask);
+        callback(cancel);
+    };
+
+    document.getElementsByClassName("button-sure")[0].onclick = function  () {
+        var a = 'true';
+        mask.parentNode.removeChild(mask);
+        callback(sure);
+    };
+};
+
+// confirm();

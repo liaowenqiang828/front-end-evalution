@@ -3,14 +3,13 @@
   padding: 0;
 }
 
-body {
+html body {
   height: 100%;
   margin: 20px;
 }
 
 .head-list {
   height: 120px;
-  /* width: 100%; */
   display: flex;
   color: white;
 }
@@ -121,7 +120,6 @@ body {
 
 
 .project-list {
-  /* height: 700px; */
   padding: 20px;
 }
 .project-list-name {
@@ -211,6 +209,106 @@ table {
   font-size: 24px;
   border: none;
 }
+
+
+.bg {
+  height: 100%;
+  width: 100%;
+
+  background-color: #666;
+}
+.the-window {
+  background : #fff;
+  width: 340px;
+  height:  120px;
+  border-radius: 8px;
+  margin:  auto;
+  padding: 20px;
+}
+
+.the-x {
+  height: 20px;
+  width: 20px;
+  font-size: 16px;
+
+  position: relative;
+  left: 310px;
+}
+
+.button-sure {
+  height: 35px;
+  width:  70px;
+
+  display: inline-block;
+  background-color: #3080FE;
+  border-radius: 8px;
+  border: 0.5px solid gray;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+
+  position: relative;
+  left: 140px;
+  top: 10px;
+}
+.button-cancle {
+  height: 35px;
+  width:  70px;
+
+  display: inline-block;
+  border-radius: 8px;
+  border: 0.5px solid gray;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+
+  position: relative;
+  left: 150px;
+  top: 10px;
+}
+.question-icon {
+  height: 30px;
+  width: 30px;
+
+  color: #f1c826;
+  font-size: 24px;
+
+  position: relative;
+  top: 25px;
+}
+.reminder-title {
+  line-height: 24px;
+  color: #333;
+  font-size: 20px;
+
+  position: relative;
+  left: 30px;
+  top: 20px;
+}
+.reminder-message {
+  color: #666;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+
+  position: relative;
+  left: 86px;
+  top: 15px;
+}
+.mask {
+  background-color: rgba(221, 221, 221, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 .masklayer {
   height: 100%;
