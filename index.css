@@ -171,7 +171,7 @@ table {
 .project-endtime {
   width: 12%;
 
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 .project-status {
@@ -306,6 +306,14 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.icon-sort {
+    opacity: 0.3;
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
 }
 
 

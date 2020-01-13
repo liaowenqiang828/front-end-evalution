@@ -1,3 +1,4 @@
+let rawData;
 function main() {
     // let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest; 
 
@@ -9,11 +10,14 @@ function main() {
             console.log(`Error ${ajax.status}: ${ajax.statusText}`); 
         } else {
             let data = JSON.parse(ajax.responseText);
+            rawData = data;
             data.forEach(insertProjectItem);
 
             let headListArray = calculate(data);
 
             updateHeadList(headListArray);
+
+
         }
     };
     ajax.onerror = function () {
@@ -132,3 +136,33 @@ function confirm() {
 };
 
 // confirm();
+
+function increse(a, b) {
+    if (a > b) {
+        return 1;
+    } else if (a < b) {
+        return -1;
+    } else {
+        return 0;
+    }
+}
+
+function decrese(a, b) {
+    if (a > b) {
+        return -1;
+    } else if (a < b) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+function incrSort() {
+    let sortedData = rawData.sort(increse);
+    insertProjectItem(sortedData);
+}
+function decrSort() {
+    let sortedData = rawData.sort(decrese);
+    insertProjectItem(sortedData);
+}
+
